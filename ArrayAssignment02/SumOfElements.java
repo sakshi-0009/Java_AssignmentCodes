@@ -18,10 +18,21 @@ public class SumOfElements {
 		for(int i=0;i<arr.length;i++) {
 			arr[i]=Integer.parseInt(br.readLine());
 		}
+		
+		System.out.println("Array elements whose addition of elements is even are : ");
+		
 		int sum=0;
 		for(int i=0;i<arr.length;i++) {
-			sum=sum+arr[i];
+			int temp = arr[i];
+			while(temp!=0) {
+				int rem = temp%10;
+				sum = sum+rem;
+				temp=temp/10;
+			}
+			if(sum%2==0) {
+				System.out.println(arr[i]);
+			}
+			sum=0;
 		}
-		System.out.println("The sum of all the elements in the array is : "+sum);
 	}
 }
