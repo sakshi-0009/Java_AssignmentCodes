@@ -12,7 +12,7 @@ public class Program_06 {
 		
 		System.out.println("Enter two Characters : ");
 		char ch1 = (char)br.read();
-		br.skip(0);
+		br.skip(1);
 		char ch2 = (char)br.read();
 		
 		if(ch1==ch2) {
