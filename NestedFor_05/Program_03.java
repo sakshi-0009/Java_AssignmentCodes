@@ -1,8 +1,7 @@
 package NestedFor_05;
 
 import java.io.*;
-
-public class Program_01 {
+public class Program_03 {
 
 	public static void main(String[] args) throws IOException{
 		
@@ -10,27 +9,14 @@ public class Program_01 {
 		
 		System.out.println("Enter number of rows : ");
 		int rows = Integer.parseInt(br.readLine());
-		int num=rows;
-		int ch = rows+64;
 		
 		for(int i=1;i<=rows;i++) {
-			for(int j=1;j<=rows;j++) {
-				if(i%2==0) {
-					System.out.print(num++ +""+ (char)ch++ +" ");
-				}
-				else {
-					System.out.print(num-- +""+ (char)ch-- +" ");
-				}
-			}
-			if(i%2==1) {
-				num++;
-				ch++;
-			}
-			else {
-				num--;
-				ch--;
+			int x = rows-i+1;
+			for(int j=rows;j>=i;j--) {
+				System.out.print(x*i+" ");
+				x--;
 			}
 			System.out.println();
-		} 
+		}
 	}
 }
