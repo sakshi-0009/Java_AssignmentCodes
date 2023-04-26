@@ -2,29 +2,36 @@ package ArrayAssignment03;
 
 import java.io.*;
 
-public class PerfectNumber {
-
-	void isPerfectNumber(int arr[]) {
+public class StrongNumber {
+	
+	void isStrongNumber(int arr[]) {
 		for(int i=0;i<arr.length;i++) {
 			int n = arr[i];
 			int sum = 0;
-			for(int j=1;j<n;j++) {
-				if(n%j==0) {
-					sum = sum+j;
+			while(n!=0) {
+				int rem = n%10;
+				int fact = 1;
+				
+				for(int j=1;j<=rem;j++) {
+					fact = fact*j;
 				}
+				sum = sum+fact;
+				n = n/10;
 			}
 			if(sum==arr[i]) {
-				System.out.println(arr[i]+" is a perfect number found at index "+i);
+				System.out.println(arr[i]+" is a strong number found at index "+i);
 			}
 			else {
-				System.out.println(arr[i]+" is not a perfect number");
+				System.out.println(arr[i]+" is not a strong number");
 			}
 		}
 	}
+	
 	public static void main(String[] args) throws IOException{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter Array Size : ");
+
+		System.out.println("Enter Array size: ");
 		int size = Integer.parseInt(br.readLine());
 		int arr[] = new int[size];
 		
@@ -32,7 +39,7 @@ public class PerfectNumber {
 		for(int i=0;i<arr.length;i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
-		PerfectNumber obj = new PerfectNumber();
-		obj.isPerfectNumber(arr);
-	}
+		StrongNumber obj = new StrongNumber();
+		obj.isStrongNumber(arr);	
+		}
 }

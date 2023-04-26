@@ -1,24 +1,20 @@
 package ArrayAssignment03;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class PerfectNumber {
+public class countOfDigit {
 
-	void isPerfectNumber(int arr[]) {
+	void digitCount(int arr[]) {
 		for(int i=0;i<arr.length;i++) {
 			int n = arr[i];
-			int sum = 0;
-			for(int j=1;j<n;j++) {
-				if(n%j==0) {
-					sum = sum+j;
-				}
+			int count = 0;
+			while(n!=0) {
+				count++;
+				n = n/10;
 			}
-			if(sum==arr[i]) {
-				System.out.println(arr[i]+" is a perfect number found at index "+i);
-			}
-			else {
-				System.out.println(arr[i]+" is not a perfect number");
-			}
+			System.out.println("Count of digit in elements of the array is : "+count);
 		}
 	}
 	public static void main(String[] args) throws IOException{
@@ -32,7 +28,7 @@ public class PerfectNumber {
 		for(int i=0;i<arr.length;i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 		}
-		PerfectNumber obj = new PerfectNumber();
-		obj.isPerfectNumber(arr);
+		countOfDigit obj = new countOfDigit();
+		obj.digitCount(arr);
 	}
 }

@@ -11,13 +11,13 @@ public class ArmstrongNumber {
 			int n = arr[i];
 			int temp = n;
 			int sum = 0;
-			int mult = 1;
 			int count = 0;
 			while(temp!=0) {
 				count++;
 				temp = temp/10;
 			}
 			while(n!=0) {
+				int mult = 1;
 				int rem = n%10;
 				for(int j=1;j<=count;j++) {
 					mult = mult*rem;
